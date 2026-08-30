@@ -3,7 +3,11 @@ package com.example.mapping;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Department {
@@ -11,8 +15,11 @@ public class Department {
     int d_id;
     String d_name;
 
-@OneToOne
-    Employee e;
+//@OneToOne
+    //Employee e;
+
+    @OneToMany(mappedBy = "d")
+    List<Employee> allEmployee=new ArrayList<>();
 
     public int getD_id() {
         return d_id;
@@ -30,11 +37,21 @@ public class Department {
         this.d_name = d_name;
     }
 
-    public Employee getE() {
-        return e;
+
+//    public Employee getE() {
+//        return e;
+//    }
+//
+//    public void setE(Employee e) {
+//        this.e = e;
+//    }
+
+
+    public List<Employee> getAllEmployee() {
+        return allEmployee;
     }
 
-    public void setE(Employee e) {
-        this.e = e;
+    public void setAllEmployee(List<Employee> allEmployee) {
+        this.allEmployee = allEmployee;
     }
 }

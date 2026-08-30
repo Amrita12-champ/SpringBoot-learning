@@ -10,7 +10,9 @@ public class Employee {
     int e_id;
     String e_name;
 
-@OneToOne(mappedBy = "e")
+//@OneToOne(mappedBy = "e")
+//    Department d;
+    @ManyToOne
     Department d;
 
     public int getE_id() {
@@ -36,4 +38,11 @@ public class Employee {
     public void setD(Department d) {
         this.d = d;
     }
+    //    public Department getD() {
+//        return d;
+//    }
+//
+//    public void setD(Department d) {
+//        this.d = d;
+//    }
 }
