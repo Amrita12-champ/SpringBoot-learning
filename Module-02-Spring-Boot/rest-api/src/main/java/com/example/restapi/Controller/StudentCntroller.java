@@ -24,4 +24,4 @@ public class StudentCntroller {
         return "Completed ";
    }
 
-}
+}//will update after 1 day
